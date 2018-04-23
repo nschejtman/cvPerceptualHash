@@ -4,14 +4,18 @@
 #include <opencv2/opencv.hpp>
 
 namespace cvPerceptualHash {
-/**
- *
- * @param image openCV image for hashing
- * @param hashLength length of the hash in bytes
- * @param outputBuffer buffer where the resulting hash will be stored
- */
+    /**
+     * Calculates a 32-bit perceptual hash from an image. Perceptual hashing obtains close hashes for similar images
+     * @param image openCV image for hashing
+     */
     float hash(cv::Mat image);
 
+    /**
+     * Compares two images based on their perceptual hash difference
+     * @param image1
+     * @param image2
+     * @return similarity percentage
+     */
     float compareImgs(cv::Mat image1, cv::Mat image2);
 }
 #endif
