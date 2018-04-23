@@ -17,5 +17,13 @@ namespace cvPerceptualHash {
      * @return similarity percentage
      */
     float compareImgs(cv::Mat image1, cv::Mat image2);
+
+    /**
+     * Calculates the similarity percentage between two hashes
+     * @param hash1
+     * @param hash2
+     * @return similarity percentage
+     */
+    float compareHashes(float hash1, float hash2);
 }
 #endif

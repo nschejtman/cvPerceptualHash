@@ -178,9 +178,12 @@ float cvPerceptualHash::hash(cv::Mat image) {
 float cvPerceptualHash::compareImgs(cv::Mat image1, cv::Mat image2) {
     float h1 = cvPerceptualHash::hash(image1);
     float h2 = cvPerceptualHash::hash(image2);
+    return cvPerceptualHash::compareHashes(h1, h2);
+}
 
+float cvPerceptualHash::compareHashes(float hash1, float hash2) {
     float hashLength = sizeof(float) * 8;
-    float hammingDist = hammingDistance(h1, h2);
+    float hammingDist = hammingDistance(hash1, hash2);
     float similarityScore = (hashLength - hammingDist) / hashLength;
     return similarityScore;
 }
